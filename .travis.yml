@@ -6,4 +6,4 @@ before_install:
   - docker build -t iamkumaranca/docker-react-course -f Dockerfile.dev .
 
 script:
-  - docker run iamkumaranca/docker-react-course npm run test -- --coverage
+  - docker run -e CI=true iamkumaranca/docker-react-course npm run test
