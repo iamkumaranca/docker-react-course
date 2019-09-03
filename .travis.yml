@@ -7,3 +7,13 @@ before_install:
 
 script:
   - docker run -e CI=true iamkumaranca/docker-react-course npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ca-central-1"
+  app: "docker-react-course"
+  env: "Docker-React-Course"
+  bucket_name: "elasticbeanstalk-ca-central-1-392102108912"
+  bucket_path: "docker-react-course"
+  on:
+    branch: "master"
